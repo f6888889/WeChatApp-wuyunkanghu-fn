@@ -1,0 +1,57 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: yinwu-muxin-backend
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 500MB
+
+logging:
+  level:
+    root: INFO
+    com.muxin: DEBUG
+    com.muxin.config.RequestLoggingInterceptor: OFF
+  pattern:
+    console: "%d{HH:mm:ss.SSS}{GMT+8} %highlight(%-5level) %magenta(%thread) --- %highlight(%logger{36}) : %highlight(%msg%n)"
+  color:
+    pattern: "%highlight(%-5level)"
+  charset:
+    console: UTF-8
+
+file:
+  data-path: ./data
+
+wechat:
+  appid: ${WECHAT_APPID:YOUR_WECHAT_APPID}
+  secret: ${WECHAT_SECRET:YOUR_WECHAT_SECRET}
+
+app:
+  strict-content: false
+
+
+doubao:
+  api:
+    enabled: true
+    base-url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    api-key: ${DOUBAO_API_KEY:YOUR_DOUBAO_API_KEY}
+    model: qwen-plus-2025-07-28
+
+vosk:
+  enabled: true
+  model-path: ./models/vosk-model-small-cn-0.22
+
+aliyun:
+  oss:
+    enabled: true
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: ${ALIYUN_ACCESS_KEY_ID:YOUR_ACCESS_KEY_ID}
+    access-key-secret: ${ALIYUN_ACCESS_KEY_SECRET:YOUR_ACCESS_KEY_SECRET}
+    bucket-name: java-chashaobao-ai

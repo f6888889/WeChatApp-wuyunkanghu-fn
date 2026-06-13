@@ -1,0 +1,44 @@
+<view class="page">
+  <view class="noise-overlay"></view>
+
+  <view class="loading" wx:if="{{isLoading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <view class="content" wx:if="{{!isLoading}}">
+    <view class="stats-summary" wx:if="{{learningProgress}}">
+      <view class="stat-card">
+        <text class="stat-value">{{learningProgress.totalMinutes || 0}}</text>
+        <text class="stat-label">总学习时长(分钟)</text>
+      </view>
+      <view class="stat-card">
+        <text class="stat-value">{{learningProgress.continuousDays || 0}}</text>
+        <text class="stat-label">连续打卡天数</text>
+      </view>
+    </view>
+
+    <view class="empty-state" wx:if="{{history.length === 0}}">
+      <text class="empty-icon">↺</text>
+      <text class="empty-title">还没有学习记录</text>
+      <text class="empty-desc">开始学习你的第一门课程吧</text>
+      <button class="action-btn" bindtap="goToIndex">去首页</button>
+    </view>
+
+    <view class="history-list" wx:else>
+      <view class="section-header">
+        <text class="section-title">学习记录 ({{history.length}})</text>
+      </view>
+      <view class="history-card" wx:for="{{history}}" wx:key="courseId" bindtap="goToCourse" data-courseid="{{item.courseId}}">
+        <image class="history-cover" src="{{item.coverImage}}" mode="aspectFill"></image>
+        <view class="history-info">
+          <text class="history-title">{{item.courseTitle}}</text>
+          <view class="history-meta">
+            <text class="meta-text">学习了 {{item.watchDuration}} 分钟</text>
+            <text class="meta-text">{{item.watchedAt}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

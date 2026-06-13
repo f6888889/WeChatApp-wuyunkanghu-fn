@@ -1,0 +1,19 @@
+.form-item {
+  margin-bottom: 40rpx;
+}
+
+.raw-json {
+  height: 400rpx;
+  font-family: monospace;
+  font-size: 24rpx;
+  background: #fdfdfd;
+}
+
+.button-group {
+  margin-top: 60rpx;
+  padding-bottom: 100rpx;
+}
+
+.label {
+  font-weight: 600;
+}

@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/edit/edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1a1a1a",
+    "navigationBarTitleText": "管理后台",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f8f9fa"
+  },
+  "sitemapLocation": "sitemap.json"
+}

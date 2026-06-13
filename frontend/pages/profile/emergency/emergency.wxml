@@ -1,0 +1,69 @@
+<view class="page" wx:if="{{isPageReady}}">
+  <view class="header">
+    <view class="header-icon">📞</view>
+    <text class="header-title">紧急联系人设置</text>
+    <text class="header-desc">设置子女的电话，当健康数据异常时，系统将通知您的子女</text>
+  </view>
+
+  <view class="content">
+    <view class="form-section">
+      <view class="form-item">
+        <text class="form-label">联系人姓名</text>
+        <input class="form-input" placeholder="请输入紧急联系人姓名" value="{{contact.name}}" bindinput="onNameInput" />
+      </view>
+
+      <view class="form-item">
+        <text class="form-label">联系电话</text>
+        <input class="form-input" type="number" placeholder="请输入紧急联系人电话" value="{{contact.phone}}" bindinput="onPhoneInput" />
+      </view>
+
+      <view class="form-item">
+        <text class="form-label">与您的关系</text>
+        <picker mode="selector" range="{{relationships}}" value="{{relationshipIndex}}" bindchange="onRelationshipChange">
+          <view class="form-picker">
+            <text>{{contact.relationship || '请选择关系'}}</text>
+            <text class="picker-arrow">›</text>
+          </view>
+        </picker>
+      </view>
+
+      <view class="form-item form-item-switch">
+        <text class="form-label">启用预警通知</text>
+        <switch checked="{{contact.enabled}}" bindchange="onEnabledChange" color="#4CAF50" />
+      </view>
+      <text class="form-hint">开启后，当系统检测到您的学习时长异常时，将通知紧急联系人</text>
+    </view>
+
+    <view class="alert-preview">
+      <text class="preview-title">预警通知示例</text>
+      <view class="preview-card">
+        <view class="preview-header">
+          <text class="preview-icon">⚠️</text>
+          <text class="preview-type">健康预警</text>
+        </view>
+        <view class="preview-body">
+          <text class="preview-message">您好，{{userInfo.nickname || '用户'}}今日学习时长已达{{currentMinutes}}分钟，超过了建议时长{{recommendedMinutes}}分钟，请注意休息。</text>
+        </view>
+        <view class="preview-footer">
+          <text class="preview-time">{{currentTime}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="tips-section">
+      <text class="tips-title">💡 温馨提示</text>
+      <view class="tips-list">
+        <text class="tips-item">• 请填写您的子女或其他家属的联系电话</text>
+        <text class="tips-item">• 当您的学习时长超过建议时长1.5倍时，系统会自动发送预警通知</text>
+        <text class="tips-item">• 请确保紧急联系人电话正确且可联系</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <button class="save-btn" bindtap="onSaveTap">保存设置</button>
+  </view>
+</view>
+
+<!-- 审核模式下的空白占位，防止内容闪现 -->
+<view class="page-placeholder" wx:else></view>

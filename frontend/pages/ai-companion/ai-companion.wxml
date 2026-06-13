@@ -1,0 +1,203 @@
+<view class="page">
+  <view class="noise-overlay"></view>
+
+  <block wx:if="{{isReviewMode}}">
+    <!-- 安全模式下的通知中心 -->
+    <view class="header-bar">
+      <view class="header-left">
+        <text class="header-title">通知公告</text>
+      </view>
+    </view>
+    
+    <scroll-view class="messages-list" scroll-y="true" style="height: calc(100vh - 100rpx); padding-bottom: 40rpx;">
+      <view class="safe-notice-container">
+        <view class="safe-notice-card">
+          <view class="safe-notice-title-row">
+            <text class="safe-notice-badge">置顶</text>
+            <text class="safe-notice-title">中老年人舞蹈运动安全须知</text>
+          </view>
+          <text class="safe-notice-content">在舞蹈或健身操锻炼前，请进行至少5-10分钟的充分拉伸，避免关节损伤。锻炼中注意补充水分，保持呼吸均匀。如感到头晕、胸闷或关节疼痛，请立即停止运动并休息。</text>
+          <text class="safe-notice-time">2026-06-01 09:00</text>
+        </view>
+
+        <view class="safe-notice-card">
+          <view class="safe-notice-title-row">
+            <text class="safe-notice-badge">通知</text>
+            <text class="safe-notice-title">银舞沐心系统功能优化公告</text>
+          </view>
+          <text class="safe-notice-content">为了给广大用户提供更优质的服务体验，银舞沐心小程序已完成核心性能升级。我们对图文排版进行了深度优化，加载速度提升40%。感谢您的支持与使用！</text>
+          <text class="safe-notice-time">2026-05-28 14:30</text>
+        </view>
+
+        <view class="safe-notice-card">
+          <view class="safe-notice-title-row">
+            <text class="safe-notice-badge">指南</text>
+            <text class="safe-notice-title">如何获取科学的健康运动建议</text>
+          </view>
+          <text class="safe-notice-content">您可以通过浏览我们推荐的精选图文，跟随详细步骤学习中老年拉伸和保健操。建议每周保持3-4次中等强度的运动，以增强身体抵抗力与关节稳定性。</text>
+          <text class="safe-notice-time">2026-05-20 10:15</text>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+
+  <block wx:else>
+    <view class="header-bar">
+      <view class="header-left">
+        <text class="header-title">添加好友</text>
+      </view>
+      <view class="header-right">
+        <view class="add-friend-btn" bindtap="onAddFriendTap">
+          <text>{{isReviewMode ? '功能开发中' : '+'}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="tab-bar">
+      <view class="tab-item {{chatMode === 'public' ? 'active' : ''}}" bindtap="onSwitchPublicChat">
+        <text>大厅</text>
+      </view>
+      <view class="tab-item {{chatMode === 'private' ? 'active' : ''}}" bindtap="onSwitchPrivateChat">
+        <text>通讯录</text>
+      </view>
+      <view class="tab-item {{chatMode === 'requests' ? 'active' : ''}}" bindtap="onSwitchRequestsChat">
+        <text>消息</text>
+      </view>
+    </view>
+
+    <view wx:if="{{chatMode === 'public'}}" class="public-chat-view">
+      <scroll-view class="messages-list" scroll-y="true" scroll-into-view="{{scrollToId}}" scroll-with-animation="true">
+        <view class="empty-state" wx:if="{{messages.length === 0}}">
+          <text class="empty-icon">💬</text>
+          <text class="empty-text">暂无消息</text>
+          <text class="empty-hint">发送第一条消息开始聊天吧</text>
+        </view>
+        <view class="message-item {{item.senderId === currentUserId ? 'me' : 'other'}}" wx:for="{{messages}}" wx:key="id" id="msg-{{item.id}}" bindlongpress="onMessageLongPress" data-message="{{item}}">
+          <view class="message-header">
+            <text class="message-sender">{{item.senderName}}</text>
+            <text class="message-time">{{item.createTime}}</text>
+          </view>
+          <view class="message-content">
+            <text>{{item.content}}</text>
+          </view>
+        </view>
+      </scroll-view>
+
+      <view class="input-area">
+        <input
+          class="message-input"
+          type="text"
+          placeholder="输入消息..."
+          value="{{inputMessage}}"
+          bindinput="onInputChange"
+          bindconfirm="sendMessage"
+          confirm-type="send"
+        />
+        <view class="btn-group">
+          <view class="voice-btn {{isRecording ? 'recording' : ''}}" bindtap="onVoiceMessage">
+            {{isReviewMode ? '功能开发中' : (isRecording ? '录音中...' : '语音')}}
+          </view>
+          <view class="send-btn" bindtap="sendMessage">{{isReviewMode ? '功能开发中' : '发送'}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{chatMode === 'private'}}">
+      <view wx:if="{{!currentChatFriend}}">
+        <view class="friends-list">
+          <view class="friends-empty" wx:if="{{friends.length === 0}}">
+            <text class="empty-icon">👥</text>
+            <text class="empty-text">暂无好友</text>
+            <text class="empty-hint">点击右上角添加好友</text>
+          </view>
+          <view class="friend-item" wx:for="{{friends}}" wx:key="id" bindtap="onSelectFriend" data-friend="{{item}}">
+            <text class="friend-name">{{item.nickname}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{currentChatFriend}}" class="private-chat-view">
+        <view class="private-chat-header">
+          <view class="back-btn" bindtap="onBackToFriends">
+            <text>←</text>
+          </view>
+          <text class="chat-title">{{currentChatFriend.nickname}}</text>
+        </view>
+
+        <scroll-view class="private-messages-list" scroll-y="true" scroll-into-view="{{scrollToId}}" scroll-with-animation="true">
+          <view class="empty-state" wx:if="{{privateMessages.length === 0}}">
+            <text class="empty-icon">💬</text>
+            <text class="empty-text">暂无消息</text>
+            <text class="empty-hint">发送第一条消息开始聊天吧</text>
+          </view>
+          <view class="message-item {{item.senderId === currentUserId ? 'me' : 'other'}}" wx:for="{{privateMessages}}" wx:key="id" id="msg-{{item.id}}">
+            <view class="message-content">
+              <text>{{item.content}}</text>
+            </view>
+            <view class="message-time-single">{{item.createTime}}</view>
+          </view>
+        </scroll-view>
+
+        <view class="input-area">
+          <input
+            class="message-input"
+            type="text"
+            placeholder="输入消息..."
+            value="{{inputMessage}}"
+            bindinput="onInputChange"
+            bindconfirm="sendPrivateMessage"
+            confirm-type="send"
+          />
+          <view class="btn-group">
+            <view class="voice-btn {{isRecording ? 'recording' : ''}}" bindtap="onVoiceMessage">
+              {{isReviewMode ? '功能开发中' : (isRecording ? '录音中...' : '语音')}}
+            </view>
+            <view class="send-btn" bindtap="sendPrivateMessage">{{isReviewMode ? '功能开发中' : '发送'}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{chatMode === 'requests'}}" class="requests-view">
+      <scroll-view class="requests-list" scroll-y="true">
+        <view class="requests-empty" wx:if="{{friendRequests.length === 0}}">
+          <text class="empty-icon">✉️</text>
+          <text class="empty-text">暂无新申请</text>
+          <text class="empty-hint">有人请求添加您为好友时会显示在这里</text>
+        </view>
+        <view class="request-item" wx:for="{{friendRequests}}" wx:key="id">
+          <view class="request-info">
+            <text class="request-name">{{item.fromUsername}}</text>
+            <text class="request-desc">请求添加您为好友</text>
+            <text class="request-time">{{item.createTime}}</text>
+          </view>
+          <view class="request-actions">
+            <button class="action-btn accept-btn" bindtap="onAcceptRequest" data-id="{{item.id}}" data-name="{{item.fromUsername}}">同意</button>
+            <button class="action-btn reject-btn" bindtap="onRejectRequest" data-id="{{item.id}}">拒绝</button>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="modal" wx:if="{{showAddFriendModal}}">
+      <view class="modal-mask" bindtap="onCloseModal"></view>
+      <view class="modal-content">
+        <text class="modal-title">添加好友</text>
+        <input
+          class="modal-input"
+          type="text"
+          placeholder="输入对方用户名"
+          value="{{friendNickname}}"
+          bindinput="onFriendNicknameInput"
+          bindconfirm="onConfirmAddFriend"
+          confirm-type="done"
+          focus="{{showAddFriendModal}}"
+        />
+        <view class="modal-actions">
+          <view class="modal-btn modal-btn-cancel" bindtap="onCloseModal">取消</view>
+          <view class="modal-btn modal-btn-confirm" bindtap="onConfirmAddFriend">确定</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

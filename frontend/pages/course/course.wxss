@@ -1,0 +1,374 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--background);
+  position: relative;
+  padding-bottom: 140rpx;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loading-spinner {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid var(--primary-light);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 32rpx;
+  color: var(--text-secondary);
+  margin-top: 24rpx;
+}
+
+.video-section {
+  position: relative;
+  height: 560rpx;
+}
+
+.video-player {
+  width: 100%;
+  height: 800rpx;
+  background-color: #000;
+  display: block;
+}
+
+.video-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  z-index: 10;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140rpx;
+  height: 140rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.play-btn:active {
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120rpx;
+  background: linear-gradient(transparent, var(--background));
+}
+
+.course-info {
+  padding: 0 40rpx;
+  margin-top: 20rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.info-header {
+  margin-bottom: 20rpx;
+}
+
+.course-title {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: block;
+}
+
+.action-buttons {
+  margin-bottom: 24rpx;
+}
+
+.favorite-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  width: 100%;
+  padding: 20rpx 0;
+  background: var(--white);
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--primary);
+  border: 4rpx solid var(--primary);
+  box-shadow: 0 4rpx 16rpx rgba(224, 122, 95, 0.2);
+  transition: all 0.2s ease;
+}
+
+.favorite-action-btn::after {
+  border: none;
+}
+
+.favorite-action-btn:active {
+  transform: scale(0.96);
+}
+
+.favorite-action-btn.favorited {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+.favorite-action-btn .favorite-icon {
+  color: currentColor;
+  font-size: 48rpx;
+}
+
+.info-meta {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 24rpx;
+}
+
+.meta-text {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.course-desc {
+  font-size: 30rpx;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: block;
+  margin-bottom: 24rpx;
+}
+
+.stats-row {
+  display: flex;
+  gap: 40rpx;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+}
+
+.stat-item .stat-icon {
+  color: var(--primary);
+  font-size: 48rpx;
+}
+
+.suitable-section,
+.benefits-section,
+.steps-section {
+  padding: 0 40rpx;
+  margin-top: 40rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.tag-item {
+  background: var(--white);
+  padding: 12rpx 24rpx;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+  color: var(--text-dark);
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  font-size: 30rpx;
+  color: var(--text-dark);
+}
+
+.benefit-item .benefit-icon {
+  color: var(--success);
+  font-size: 36rpx;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.step-item {
+  background: var(--white);
+  border-radius: 20rpx;
+  padding: 24rpx;
+  display: flex;
+  gap: 24rpx;
+  transition: all 0.3s ease;
+  border: 4rpx solid transparent;
+}
+
+.step-item.active {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, #FDF6EC 0%, #F8E8D6 100%);
+}
+
+.step-num {
+  width: 64rpx;
+  height: 64rpx;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.step-duration {
+  font-size: 26rpx;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.step-desc {
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: block;
+}
+
+.action-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 40rpx 40rpx;
+  background: var(--background);
+  box-shadow: 0 -8rpx 32rpx rgba(61, 44, 46, 0.1);
+  z-index: 100;
+}
+
+.start-btn {
+  background: var(--primary);
+  color: white;
+  font-size: 36rpx;
+  font-weight: bold;
+  height: 96rpx;
+  border-radius: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  transition: transform 0.2s ease;
+}
+
+.start-btn:active {
+  transform: scale(0.98);
+}
+
+/* 运行环境适配占位图样式 */
+.video-section.placeholder-mode {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grayscale {
+  filter: grayscale(100%) !important;
+  opacity: 0.6;
+}
+
+.placeholder-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+  width: 70%;
+  text-align: center;
+  z-index: 5;
+}
+
+.placeholder-icon {
+  font-size: 60rpx;
+  margin-bottom: 16rpx;
+}
+
+.placeholder-text {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+
+.placeholder-hint {
+  font-size: 26rpx;
+  color: #888;
+}

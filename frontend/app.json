@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/podcast-detail/podcast-detail",
+    "pages/create/create",
+    "pages/course/course",
+    "pages/video-player/video-player",
+    "pages/ai-companion/ai-companion",
+    "pages/profile/profile",
+    "pages/health/health",
+    "pages/health/health-report/health-report",
+    "pages/profile/favorites/favorites",
+    "pages/profile/history/history",
+    "pages/profile/emergency/emergency",
+    "pages/shop/shop"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FDF6EC",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "银舞沐心",
+    "backgroundColor": "#FDF6EC",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#8B7D7B",
+    "selectedColor": "#E07A5F",
+    "backgroundColor": "#FDF6EC",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "播客",
+        "iconPath": "assets/icons/search.png",
+        "selectedIconPath": "assets/icons/search-active.png"
+      },
+      {
+        "pagePath": "pages/create/create",
+        "text": "精选",
+        "iconPath": "assets/icons/create.png",
+        "selectedIconPath": "assets/icons/create-active.png"
+      },
+      {
+        "pagePath": "pages/ai-companion/ai-companion",
+        "text": "消息",
+        "iconPath": "assets/icons/ai.png",
+        "selectedIconPath": "assets/icons/ai-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/icons/profile.png",
+        "selectedIconPath": "assets/icons/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

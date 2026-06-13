@@ -1,0 +1,166 @@
+<view class="page" wx:if="{{isPageReady}}">
+  <view class="page-header">
+    <text class="page-title">专属健康报告</text>
+    <text class="page-subtitle">基于您的健康数据量身推荐</text>
+  </view>
+
+  <view class="report-loading" wx:if="{{loading}}">
+    <text>正在生成您的健康报告...</text>
+  </view>
+
+  <view class="report-content" wx:if="{{!loading && report}}">
+    <view class="section physical-section">
+      <view class="section-header">
+        <text class="section-icon">🏃</text>
+        <text class="section-title">身体机能评估</text>
+      </view>
+      <view class="assessment-card">
+        <view class="assessment-row">
+          <view class="assessment-item">
+            <text class="assessment-label">关节灵活度</text>
+            <view class="score-bar">
+              <view class="score-fill" style="width: {{report.physicalAssessment.jointFlexibilityScore}}%"></view>
+            </view>
+            <text class="assessment-score">{{report.physicalAssessment.jointFlexibilityScore}}分</text>
+          </view>
+          <view class="assessment-item">
+            <text class="assessment-label">平衡能力</text>
+            <view class="score-bar">
+              <view class="score-fill" style="width: {{report.physicalAssessment.balanceScore}}%"></view>
+            </view>
+            <text class="assessment-score">{{report.physicalAssessment.balanceScore}}分</text>
+          </view>
+          <view class="assessment-item">
+            <text class="assessment-label">体力水平</text>
+            <view class="score-bar">
+              <view class="score-fill" style="width: {{report.physicalAssessment.staminaScore}}%"></view>
+            </view>
+            <text class="assessment-score">{{report.physicalAssessment.staminaScore}}分</text>
+          </view>
+        </view>
+        <view class="assessment-result">
+          <text class="result-label">综合评级：</text>
+          <text class="result-value">{{report.physicalAssessment.overallLevel}}</text>
+          <text class="result-recommend">推荐：{{report.physicalAssessment.recommendedDanceType}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section emotional-section">
+      <view class="section-header">
+        <text class="section-icon">😊</text>
+        <text class="section-title">情绪状态识别</text>
+      </view>
+      <view class="emotional-card">
+        <view class="emotional-info">
+          <view class="emotional-item">
+            <text class="emotional-label">压力指数</text>
+            <text class="emotional-value stress-{{report.emotionalState.stressLevel === '轻松' ? 'relaxed' : report.emotionalState.stressLevel === '适中' ? 'moderate' : report.emotionalState.stressLevel === '偏高' ? 'high' : 'veryhigh'}}">{{report.emotionalState.stressLevel}}</text>
+          </view>
+          <view class="emotional-item">
+            <text class="emotional-label">情绪状态</text>
+            <text class="emotional-value mood-{{report.emotionalState.moodState === '愉悦' ? 'happy' : report.emotionalState.moodState === '平静' ? 'calm' : report.emotionalState.moodState === '有压力' ? 'stressed' : 'low'}}">{{report.emotionalState.moodState}}</text>
+          </view>
+        </view>
+        <view class="emotional-recommend">
+          <text class="recommend-text">推荐：{{report.emotionalState.recommendedDanceType}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section exercise-section">
+      <view class="section-header">
+        <text class="section-icon">🎯</text>
+        <text class="section-title">运动能力等级</text>
+      </view>
+      <view class="exercise-card">
+        <view class="exercise-level">
+          <text class="level-badge level-{{report.exerciseLevel.level === '初学者' ? 'beginner' : report.exerciseLevel.level === '初级' ? 'easy' : report.exerciseLevel.level === '中级' ? 'medium' : 'hard'}}">{{report.exerciseLevel.level}}</text>
+          <view class="exercise-stats">
+            <text class="stat-item">完成率: {{report.exerciseLevel.completionRate}}%</text>
+            <text class="stat-item">学习时长: {{report.exerciseLevel.totalMinutes}}分钟</text>
+          </view>
+        </view>
+        <view class="exercise-difficulty">
+          <text class="difficulty-label">推荐难度系数：</text>
+          <view class="difficulty-stars">
+            <text wx:for="{{report.exerciseLevel.difficultyRecommendation}}" wx:key="index" class="star">★</text>
+            <text wx:for="{{3 - report.exerciseLevel.difficultyRecommendation}}" wx:key="index" class="star-empty">☆</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section rehab-section" wx:if="{{report.rehabilitationTags.length > 0}}">
+      <view class="section-header">
+        <text class="section-icon">🏥</text>
+        <text class="section-title">康复需求标注</text>
+      </view>
+      <view class="rehab-list">
+        <view class="rehab-item" wx:for="{{report.rehabilitationTags}}" wx:key="tag">
+          <view class="rehab-header">
+            <text class="rehab-tag">{{item.tag}}</text>
+            <text class="rehab-severity severity-{{item.severity === '轻度' ? 'light' : item.severity === '中度' ? 'moderate' : 'severe'}}">{{item.severity}}</text>
+          </view>
+          <text class="rehab-desc">{{item.description}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section recommend-section">
+      <view class="section-header">
+        <text class="section-icon">💡</text>
+        <text class="section-title">课程推荐</text>
+      </view>
+      <view class="course-list">
+        <view class="course-item" wx:for="{{report.courseRecommendations}}" wx:key="courseId" bindtap="goToCourse" data-courseid="{{item.courseId}}">
+          <view class="course-info">
+            <text class="course-title">{{item.courseTitle}}</text>
+            <text class="course-reason">{{item.reason}}</text>
+            <view class="course-tags">
+              <text class="course-tag tag-category">{{item.category}}</text>
+              <text class="course-tag tag-match">匹配度: {{item.matchLevel}}</text>
+            </view>
+          </view>
+          <view class="course-arrow">›</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section alert-section" wx:if="{{alertStatus}}">
+      <view class="section-header">
+        <text class="section-icon">🔔</text>
+        <text class="section-title">健康预警状态</text>
+      </view>
+      <view class="alert-card alert-{{alertStatus.level}}">
+        <view class="alert-header">
+          <text class="alert-icon">{{alertStatus.level === 'HIGH' ? '🚨' : alertStatus.level === 'MEDIUM' ? '⚠️' : 'ℹ️'}}</text>
+          <text class="alert-title">{{alertStatus.title}}</text>
+        </view>
+        <view class="alert-body">
+          <text class="alert-content">{{alertStatus.content}}</text>
+        </view>
+        <view class="alert-footer">
+          <text class="alert-time">{{alertStatus.createdAt}}</text>
+          <text class="alert-contact" wx:if="{{emergencyContact && !isReviewMode}}">紧急联系人：{{emergencyContact.name}} ({{emergencyContact.relationship}})</text>
+        </view>
+      </view>
+      <view class="emergency-tip" bindtap="goToEmergency" wx:if="{{!isReviewMode}}">
+        <text class="tip-icon">📞</text>
+        <text class="tip-text">修改紧急联系人设置</text>
+        <text class="tip-arrow">›</text>
+      </view>
+    </view>
+
+    <view class="report-footer">
+      <text class="footer-text">报告生成时间：{{report.generatedAt}}</text>
+    </view>
+  </view>
+
+  <view class="error-view" wx:if="{{!loading && error}}">
+    <text class="error-text">{{error}}</text>
+  </view>
+</view>
+
+<!-- 审核模式下的空白占位 -->
+<view class="page-placeholder" wx:else></view>

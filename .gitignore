@@ -1,0 +1,54 @@
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Java / Maven build output
+**/target/
+**/*.class
+.mvn/
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/pom.xml.next
+**/pom.xml.releaseBackup
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Node / frontend dependencies
+node_modules/
+dist/
+build/
+
+# Python caching
+__pycache__/
+*.py[cod]
+*$py.class
+
+# WeChat Miniprogram private configs (specific to developers)
+project.private.config.json
+frontend/project.private.config.json
+adminFrontend/project.private.config.json
+
+# Audio and AI models
+*.wav
+*.raw
+backend/vosk-model.zip
+backend/models/
+test_ark.py
+test_response.json
+
+# Temporary files and logs
+temp_ports.txt
+data/logs/
+data/change/
+*.log
+
+# Scratch scripts/files
+scratch/

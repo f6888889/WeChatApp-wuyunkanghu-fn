@@ -1,0 +1,89 @@
+<view class="page">
+  <view class="search-header">
+    <view class="search-input-wrap">
+      <input class="search-input" type="text" placeholder="输入您想咨询的问题" value="{{searchQuery}}" bindinput="onSearchInput" bindconfirm="onSearchConfirm" confirm-type="search" placeholder-class="search-placeholder"/>
+      <view class="btn-group">
+        <view class="voice-btn {{isRecording ? 'recording' : ''}}" bindtap="onVoiceSearch">
+          <text class="btn-icon">{{isRecording ? '⏹' : '🎤'}}</text>
+          <text class="btn-text">语音</text>
+        </view>
+        <view class="send-btn" bindtap="onSearchConfirm">
+          <text class="btn-icon">➤</text>
+          <text class="btn-text">发送</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 搜索展示区域 -->
+  <view class="results-section" wx:if="{{hasSearched}}">
+    <!-- AI智能建议 -->
+    <view class="ai-section">
+      <view class="section-header">
+        <text class="section-title">✨ 智能助手小银的建议</text>
+      </view>
+      <view class="ai-response-card">
+        <view class="ai-avatar-wrap">
+          <text class="ai-avatar-icon">🤖</text>
+        </view>
+        <view class="ai-content">
+          <text class="ai-text {{!aiResponse ? 'ai-loading' : ''}}">{{aiResponse || '正在为您解答，请稍候...'}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 搜索结果列表 -->
+    <view class="courses-section" wx:if="{{podcastResults.length > 0}}">
+      <view class="section-header">
+        <text class="section-title">搜索结果</text>
+        <text class="section-count">{{podcastResults.length}} 个</text>
+      </view>
+      <view class="results-list">
+        <view class="result-item" wx:for="{{podcastResults}}" wx:key="id" bindtap="goToPodcast" data-id="{{item.id}}">
+          <view class="result-info">
+            <text class="result-title">{{item.title}}</text>
+            <text class="result-desc">{{item.description}}</text>
+            <view class="result-meta">
+              <text class="meta-text">⏱ 时长: {{item.duration}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="podcast-searching-inline" wx:elif="{{isPodcastSearching}}">
+      <view class="inline-spinner"></view>
+      <text class="inline-loading-text">正在为您检索相关播客...</text>
+    </view>
+  </view>
+
+  <!-- 全部播客列表 (仅在正常模式下，始终在底部展示正常的全部播客) -->
+  <view class="all-podcasts-section" wx:if="{{!isReviewMode && allPodcasts.length > 0}}">
+    <view class="section-header">
+      <text class="section-title">全部播客</text>
+      <text class="section-count">{{allPodcasts.length}} 个</text>
+    </view>
+    <view class="results-list">
+      <view class="result-item" wx:for="{{allPodcasts}}" wx:key="id" bindtap="goToPodcast" data-id="{{item.id}}">
+        <view class="result-info">
+          <text class="result-title">{{item.title}}</text>
+          <text class="result-desc">{{item.description}}</text>
+          <view class="result-meta">
+            <text class="meta-text">⏱ 时长: {{item.duration}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 安全模式下的首屏搜索引导 (仅在安全模式且未进行搜索时显示) -->
+  <view class="empty-state" wx:if="{{isReviewMode && !hasSearched}}">
+    <text class="empty-icon">🔍</text>
+    <text class="empty-text">搜索健康播客</text>
+    <text class="empty-hint">输入您想咨询的问题，点击发送即可检索</text>
+  </view>
+
+  <view class="loading-overlay" wx:if="{{isSearching && !hasSearched}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在搜索播客...</text>
+  </view>
+</view>

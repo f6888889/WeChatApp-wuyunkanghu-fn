@@ -1,0 +1,134 @@
+<view class="page">
+  <view class="profile-header" wx:if="{{isLoggedIn}}">
+    <view class="user-info">
+      <view class="user-details" bindtap="onNicknameTap">
+        <text class="nickname">{{userInfo.nickname}} <text style="color: #8B7D7B; font-size: 28rpx;">✎</text></text>
+        <text class="user-desc">在银舞沐心开启快乐晚年</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="login-section" wx:if="{{!isLoggedIn}}">
+    <view class="login-card">
+      <text class="login-icon">👤</text>
+      <text class="login-title">登录银舞沐心</text>
+      <text class="login-desc">登录后享受更多个性化服务</text>
+      <button class="login-btn" bindtap="onLoginTap">微信一键登录</button>
+    </view>
+  </view>
+
+  <view wx:if="{{isLoggedIn}}">
+    <view class="checkin-section">
+      <view class="checkin-card {{checkInData.checkedInToday ? 'checked' : ''}}">
+        <view class="checkin-left">
+          <view class="checkin-icon">{{checkInData.checkedInToday ? '✅' : '📅'}}</view>
+          <view class="checkin-info">
+            <text class="checkin-title">{{checkInData.checkedInToday ? '今日已打卡' : '今日未打卡'}}</text>
+            <text class="checkin-desc">连续打卡 {{checkInData.continuousDays}} 天</text>
+          </view>
+        </view>
+        <view class="checkin-right">
+          <button class="checkin-btn {{checkInData.checkedInToday ? 'checked' : ''}}" bindtap="onCheckInTap" disabled="{{checkInData.checkedInToday}}">
+            {{checkInData.checkedInToday ? '已打卡' : '打卡'}}
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <view class="points-section">
+      <view class="points-card" bindtap="goToShop">
+        <view class="points-left">
+          <text class="points-icon">🪙</text>
+          <view class="points-info">
+            <text class="points-value">{{checkInData.points}}</text>
+            <text class="points-label">我的积分</text>
+          </view>
+        </view>
+        <view class="points-right">
+          <text class="points-shop-text">积分商城</text>
+          <text class="points-arrow">›</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="stats-section">
+      <view class="stats-card">
+        <view class="stat-item">
+          <text class="stat-icon">📅</text>
+          <text class="stat-value">{{checkInData.continuousDays || 0}}</text>
+          <text class="stat-label">连续打卡</text>
+        </view>
+        <view class="stat-divider"></view>
+        <view class="stat-item">
+          <text class="stat-icon">⏱</text>
+          <text class="stat-value">{{learningProgress.totalMinutes || 0}}</text>
+          <text class="stat-label">学习分钟</text>
+        </view>
+        <view class="stat-divider"></view>
+        <view class="stat-item">
+          <text class="stat-icon">⏰</text>
+          <text class="stat-value">{{learningProgress.onlineMinutes || 0}}</text>
+          <text class="stat-label">今日在线</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="recommend-section">
+      <view class="recommend-card {{bodyWarning ? 'recommend-card-warning' : ''}}">
+        <text class="recommend-icon">{{bodyWarning ? '⚠️' : '💡'}}</text>
+        <view class="recommend-content">
+          <text class="recommend-label">每天建议学习时长</text>
+          <text class="recommend-value">{{learningProgress.dailyRecommendedMinutes || 180}}分钟</text>
+          <text class="recommend-tip" wx:if="{{bodyWarning}}">今日学习超过三个小时，建议休息</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="health-report-section">
+      <view class="health-report-card" bindtap="goToHealthReport">
+        <view class="health-report-icon">📊</view>
+        <view class="health-report-content">
+          <text class="health-report-title">健康报告</text>
+          <text class="health-report-desc">身体机能·情绪状态·运动能力</text>
+        </view>
+        <view class="health-report-arrow">
+          <text>›</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="menu-section">
+      <view class="menu-group" wx:for="{{menuItems}}" wx:key="index">
+        <view class="menu-item" wx:for="{{item}}" wx:key="id" wx:for-item="menuItem" bindtap="onMenuTap" data-item="{{menuItem}}" wx:if="{{!(isReviewMode && menuItem.id === 'emergency')}}">
+          <view class="menu-icon" style="background: {{menuItem.color}}">
+            <text class="menu-icon-text">{{menuItem.id === 'favorites' ? '♥' : '↺'}}</text>
+          </view>
+          <text class="menu-title">{{menuItem.title}}</text>
+          <view class="menu-arrow">
+            <text>›</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="favorites-preview" wx:if="{{favoriteCourses.length > 0}}">
+      <view class="section-header">
+        <text class="section-title">我的收藏</text>
+      </view>
+      <scroll-view class="favorites-scroll" scroll-x="true">
+        <view class="favorite-card" wx:for="{{favoriteCourses}}" wx:key="id" bindtap="goToCourseDetail" data-courseid="{{item.id}}">
+          <image class="favorite-image" src="{{item.coverImage}}" mode="aspectFill"></image>
+          <text class="favorite-title">{{item.title}}</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="logout-section" wx:if="{{isLoggedIn}}">
+      <button class="logout-btn" bindtap="onLogoutTap">退出登录</button>
+    </view>
+  </view>
+
+  <view class="icp-section">
+    <text class="icp-text">桂ICP备2026004339号-1X</text>
+  </view>
+</view>

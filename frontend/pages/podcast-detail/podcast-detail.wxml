@@ -1,0 +1,50 @@
+<view class="page">
+  <view class="podcast-header">
+    <view class="title-section">
+      <text class="podcast-title">{{podcast.title}}</text>
+      <view class="meta-info">
+        <text class="duration-tag">⏱ 时长: {{podcast.duration}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="player-panel">
+    <view class="progress-wrap">
+      <slider 
+        class="progress-slider" 
+        block-size="12" 
+        activeColor="#E07A5F" 
+        backgroundColor="#E8D8C8" 
+        value="{{sliderValue}}" 
+        bindchange="onSliderChange"
+        bindchanging="onSliderChanging"
+      />
+      <view class="time-labels">
+        <text class="time-label">{{currentTimeText}}</text>
+        <text class="time-label">{{durationText}}</text>
+      </view>
+    </view>
+
+    <view class="control-actions">
+      <button class="play-btn {{isPlaying ? 'playing' : ''}}" bindtap="togglePlay">
+        <view class="play-icon-wrap">
+          <text class="play-icon">{{isPlaying ? '⏸' : '▶'}}</text>
+        </view>
+      </button>
+    </view>
+  </view>
+
+  <view class="podcast-body">
+    <view class="section-title">
+      <text class="title-text">播客图文详情</text>
+      <view class="title-line"></view>
+    </view>
+    <view class="content-blocks">
+      <block wx:for="{{podcast.content}}" wx:key="index">
+        <view class="block-item" wx:if="{{item.type === 'text'}}">
+          <text class="text-paragraph">{{item.value}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

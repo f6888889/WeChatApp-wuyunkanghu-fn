@@ -1,0 +1,142 @@
+[
+  {
+    "id": "podcast_001",
+    "title": "今天您辛苦了",
+    "description": "送给忙碌了一天的您，温馨亲切的心灵关怀，帮您拂去周身疲惫，带给您宁静与温暖。",
+    "duration": "00:51",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E4%BB%8A%E5%A4%A9%E6%82%A8%E8%BE%9B%E8%8B%A6%E4%BA%86.m4a",
+    "category": "心灵抚慰",
+    "content": [
+      {
+        "type": "text",
+        "value": "亲爱的叔叔阿姨、长辈们，今天您辛苦了。忙忙碌碌了一整天，别忘了停下脚步，喝口温水，靠在椅背上放松一下。听一首舒缓的曲子，对自己说一声：‘今天我做得很棒，辛苦了！’给自己放个假，享受这一刻的宁静。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_002",
+    "title": "允许自己休息",
+    "description": "听听内心的声音，在宁静的叙述中，允许自己安稳地睡一觉、歇一歇。",
+    "duration": "01:06",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E5%85%81%E8%AE%B8%E8%87%AA%E5%B7%B1%E4%BC%91%E6%81%AF.m4a",
+    "category": "放松助眠",
+    "content": [
+      {
+        "type": "text",
+        "value": "生活中总有操不完的心，干不完的家务。但今天，请对自己温柔一点，别总是把自己绷得那么紧。闭上双眼，深深地呼吸，把脑海里的琐事一件件放下。此时此刻，您只属于您自己，允许自己好好休息，养精蓄锐。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_003",
+    "title": "回忆里的一颗糖",
+    "description": "童年的歌谣、故乡的小路、曾经温暖的瞬间……回忆里总有一颗属于您的糖，甜在心头。",
+    "duration": "00:59",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E5%9B%9E%E5%BF%86%E9%87%8C%E7%9A%84%E4%B8%80%E9%A2%97%E7%B3%96.m4a",
+    "category": "岁月回声",
+    "content": [
+      {
+        "type": "text",
+        "value": "每个人的记忆深处，都珍藏着一些温暖而甜蜜的故事。或许是小时候妈妈塞进手里的一块酥糖，或许是年轻时拼搏洒下的汗水与欢笑。这回忆就像一颗糖，每当生活有些许疲惫时，含上一颗，温润心田，给予我们继续前行的力量。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_004",
+    "title": "接受不完美",
+    "description": "释怀岁月的无常，宽容生活中的小瑕疵，接纳一个真实且不完美的自己。",
+    "duration": "00:55",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E6%8E%A5%E5%8F%97%E4%B8%8D%E5%AE%8C%E7%BE%8E.m4a",
+    "category": "心灵成长",
+    "content": [
+      {
+        "type": "text",
+        "value": "生活里没有绝对的完美，有些事我们已经尽力了，结果如何不妨坦然接受。不必为了一些小瑕疵而感到懊恼，正是因为有了各种不一样的经历和不完美，才拼凑出了独一无二、最真实的我们。学着爱自己，接纳属于您的不完美。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_005",
+    "title": "深呼吸放松法",
+    "description": "简单实用的有氧调息解压法，跟着旋律与话语调整呼吸节奏，释放心中紧绷的压力。",
+    "duration": "01:22",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E6%B7%B1%E5%91%BC%E5%90%B8%E6%94%BE%E6%9D%BE%E6%B3%95.m4a",
+    "category": "呼吸养生",
+    "content": [
+      {
+        "type": "text",
+        "value": "请您找一个舒适的姿势坐好或躺下，闭上双眼，肩膀自然下沉。现在，深深地吸一口气，让清新的空气充满您的肺部……然后慢慢地呼出，感觉身体里的疲惫、紧绷和烦恼都在随着这口气被排出体外。重复几次，让身心重归宁静。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_006",
+    "title": "窗外的风景",
+    "description": "推开窗，看看天边的彩云，听听梢头的鸟啼。只要留心，生活处处皆是风景。",
+    "duration": "00:58",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E7%AA%97%E5%A4%96%E7%9A%84%E9%A3%8E%E6%99%AF.m4a",
+    "category": "随笔随感",
+    "content": [
+      {
+        "type": "text",
+        "value": "您有多久没有静静端详过窗外的景色了？不管是清晨的第一缕晨曦，还是傍晚橘红色的晚霞；不管是绿意盎然的枝头，还是雨滴拍打在玻璃上的声音。大自然从不吝啬它的美丽，推开窗，深吸一口新鲜空气，去感受这份生活的美好吧。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_007",
+    "title": "第一期：接纳岁月，与自己温柔和解",
+    "description": "探讨如何淡然面对自然的衰老，坦然接纳年轮的增长，像老朋友一样拥抱自己。",
+    "duration": "03:29",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E7%AC%AC%E4%B8%80%E6%9C%9F%EF%BC%9A%E6%8E%A5%E7%BA%B3%E5%B2%81%E6%9C%88%EF%BC%8C%E4%B8%8E%E8%87%AA%E5%B7%B1%E6%B8%A9%E6%9F%94%E5%92%8C%E8%A7%A3.m4a",
+    "category": "康养专题",
+    "content": [
+      {
+        "type": "text",
+        "value": "长辈们好，欢迎来到《银发康养电台》第一期。老去是人生的必然旅程，它不是失去，而是积累与沉淀。接纳脸上的皱纹，接纳变慢的步子，去包容偶尔健忘的自己。与自己温柔和解，优雅而从容地享受当下的每一刻生活。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_008",
+    "title": "第二期：看淡得失，在烟火日常里寻心安",
+    "description": "从日常一餐一饭中感悟人生，分享看淡外在得失、求取内心清静安宁的处世哲学。",
+    "duration": "03:58",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E7%AC%AC%E4%BA%8C%E6%9C%9F%EF%BC%9A%E7%9C%8B%E6%B7%A1%E5%BE%97%E5%A4%B1%EF%BC%8C%E5%9C%A8%E7%83%9F%E7%81%AB%E6%97%A5%E5%B8%B8%E9%87%8C%E5%AF%BB%E5%BF%83%E5%AE%89.m4a",
+    "category": "康养专题",
+    "content": [
+      {
+        "type": "text",
+        "value": "长辈们好，欢迎收听《银发康养电台》第二期。古人云：‘心安即是归处。’人生的很多烦恼，都源于过于计较得失。当我们把目光收回，放在热气腾腾的家常菜上，放在邻里之间温暖的问候上，您会发现，真正的幸福其实就藏在日常的柴米油盐里。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_009",
+    "title": "告别老年孤独，把心慢慢安放安稳",
+    "description": "关爱老年群体心理健康，提供走出孤独的心灵策略，引导长辈建立丰富的晚年生活。",
+    "duration": "04:15",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E5%91%8A%E5%88%AB%E8%80%81%E5%B9%B4%E5%AD%A4%E7%8B%AC%EF%BC%8C%E6%8A%8A%E5%BF%83%E6%85%A2%E6%85%A2%E5%AE%89%E6%94%BE%E5%AE%89%E7%A8%B3.mp3_tmp",
+    "category": "心理健康",
+    "content": [
+      {
+        "type": "text",
+        "value": "孩子们长大了，有了自己的小家庭，屋里有时会显得空落落的。但请记住，您依然是生活的主角。去小区楼下下盘棋，跟伙伴们去公园跳跳广场舞，或者培养一门年轻时没时间学的乐器。充实自己的生活，把心慢慢安放得踏实、平稳。"
+      }
+    ]
+  },
+  {
+    "id": "podcast_010",
+    "title": "退休，不是落幕，是人生下半场的重启",
+    "description": "探讨退休身份转变后的心理调适，开启更自由、更有价值感的第二人生。",
+    "duration": "05:00",
+    "audioUrl": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B/%E9%9F%B3%E9%A2%91/%E9%80%80%E4%BC%91%EF%BC%8C%E4%B8%8D%E6%98%AF%E8%90%BD%E5%B9%95%EF%BC%8C%E6%98%AF%E4%BA%BA%E7%94%9F%E4%B8%8B%E5%8D%8A%E5%9C%BA%E7%9A%84%E9%87%8D%E5%90%AF.mp3_tmp",
+    "category": "生活感悟",
+    "content": [
+      {
+        "type": "text",
+        "value": "退休并不代表被社会‘边缘化’，也不代表人生奋斗的结束。相反，它是一次华丽的重启。终于没有了繁重的工作压力，您可以去旅游，去学习，去陪伴家人，或者去实现未竟的梦想。把退休当作黄金岁月的开端，开启人生更精彩的下半场。"
+      }
+    ]
+  }
+]

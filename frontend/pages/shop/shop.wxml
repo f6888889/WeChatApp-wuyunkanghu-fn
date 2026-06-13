@@ -1,0 +1,65 @@
+<view class="page" wx:if="{{isPageReady}}">
+  <view class="points-header">
+    <view class="points-banner">
+      <text class="points-banner-icon">🪙</text>
+      <view class="points-banner-info">
+        <text class="points-banner-value">{{points}}</text>
+        <text class="points-banner-label">可用积分</text>
+      </view>
+    </view>
+  </view>
+  
+  <view class="policy-notice">
+    <view class="policy-notice-content">
+      <text class="policy-icon">📢</text>
+      <text class="policy-text">每天只能兑换一次，一经兑换，不能更改退货。</text>
+    </view>
+  </view>
+
+  <view class="category-tabs">
+    <view class="tab-item {{currentTab === item ? 'active' : ''}}" 
+          wx:for="{{categories}}" 
+          wx:key="*this" 
+          bindtap="onTabChange" 
+          data-category="{{item}}">
+      <text>{{item}}</text>
+    </view>
+  </view>
+
+  <view class="shop-list" wx:if="{{!loading}}">
+    <view class="shop-item" wx:for="{{displayedItems}}" wx:key="id">
+      <view class="item-card">
+        <image class="item-image" src="{{item.image}}" mode="aspectFill"></image>
+        <view class="item-category-tag">{{item.category}}</view>
+        <view class="item-info">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-desc">{{item.description}}</text>
+          <view class="item-bottom">
+            <view class="item-points">
+              <text class="item-points-icon">🪙</text>
+              <text class="item-points-value">{{item.points}}</text>
+            </view>
+            <button class="redeem-btn {{points < item.points ? 'disabled' : ''}} {{redeemedItems.indexOf(item.id) >= 0 ? 'redeemed' : ''}}"
+                    bindtap="onRedeemTap"
+                    data-item="{{item}}"
+                    disabled="{{points < item.points}}">
+              {{redeemedItems.indexOf(item.id) >= 0 ? '已兑换' : (points < item.points ? '立即兑换' : '立即兑换')}}
+            </button>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-tip" wx:if="{{displayedItems.length === 0}}">
+      <image class="empty-image" src="/static/images/empty_box.png" mode="aspectFit"></image>
+      <text>暂无相关商品</text>
+    </view>
+  </view>
+
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>
+
+<!-- 审核模式下的空白占位 -->
+<view class="page-placeholder" wx:else></view>

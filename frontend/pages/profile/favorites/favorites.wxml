@@ -1,0 +1,34 @@
+<view class="page">
+  <view class="noise-overlay"></view>
+
+  <view class="loading" wx:if="{{isLoading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <view class="content" wx:if="{{!isLoading}}">
+    <view class="empty-state" wx:if="{{favorites.length === 0}}">
+      <text class="empty-icon">♡</text>
+      <text class="empty-title">还没有收藏的课程</text>
+      <text class="empty-desc">去首页看看喜欢的课程吧</text>
+      <button class="action-btn" bindtap="goToIndex">去首页</button>
+    </view>
+
+    <view class="course-list" wx:else>
+      <view class="course-card" wx:for="{{favorites}}" wx:key="id" bindtap="goToCourse" data-courseid="{{item.id}}">
+        <image class="course-cover" src="{{item.coverImage}}" mode="aspectFill"></image>
+        <view class="course-info">
+          <text class="course-title">{{item.title}}</text>
+          <view class="course-meta">
+            <text class="tag {{getDifficultyClass(item.difficulty)}}">{{getDifficultyText(item.difficulty)}}</text>
+            <text class="meta-text">{{item.duration}}分钟</text>
+          </view>
+          <text class="course-desc">{{item.description}}</text>
+        </view>
+        <view class="action-icon" catchtap="onRemoveFavorite" data-courseid="{{item.id}}">
+          <text class="heart-icon">♥</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

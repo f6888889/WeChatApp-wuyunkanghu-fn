@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="list-header">
+    <view class="title">{{name}}</view>
+    <view class="actions">
+      <view class="btn btn-primary add-btn" bindtap="goToAdd">+ 新增</view>
+    </view>
+  </view>
+
+  <view class="search-box">
+    <input class="input search-input" placeholder="搜索 ID 或名称..." bindinput="onSearch" />
+  </view>
+
+  <view class="list-container">
+    <view class="data-item card" wx:for="{{filteredList}}" wx:key="id">
+      <view class="item-main">
+        <view class="item-id">ID: {{item.id}}</view>
+        <view class="item-info">
+          <text class="item-title" wx:if="{{item.name}}">{{item.name}}</text>
+          <text class="item-title" wx:elif="{{item.nickname}}">{{item.nickname}}</text>
+          <text class="item-title" wx:elif="{{item.title}}">{{item.title}}</text>
+          <text class="item-title" wx:elif="{{item.content}}">{{item.content}}</text>
+          <text class="item-title" wx:else>无标题数据</text>
+        </view>
+      </view>
+      <view class="item-actions">
+        <view class="action-btn edit-btn" bindtap="goToEdit" data-id="{{item.id}}">编辑</view>
+        <view class="action-btn delete-btn" bindtap="onDelete" data-id="{{item.id}}">删除</view>
+      </view>
+    </view>
+    
+    <view class="empty-state" wx:if="{{filteredList.length === 0}}">
+      暂无数据
+    </view>
+  </view>
+</view>

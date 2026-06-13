@@ -1,0 +1,17 @@
+# Set default behavior to automatic text/binary detection
+* text=auto
+
+# Explicitly mark binary files to prevent LF/CRLF conversion and corruption
+*.jar binary
+*.dll binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.wav binary
+*.raw binary
+*.mp3 binary
+*.mp4 binary

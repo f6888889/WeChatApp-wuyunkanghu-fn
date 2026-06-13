@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>视频播放</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .video-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <div class="loading" id="loading">加载中...</div>
+        <video id="videoPlayer" controls autoplay playsinline webkit-playsinline></video>
+    </div>
+    <script>
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+        const videoUrl = getQueryParam('url');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const loading = document.getElementById('loading');
+        if (videoUrl) {
+            videoPlayer.src = decodeURIComponent(videoUrl);
+            videoPlayer.onloadedmetadata = function() {
+                loading.style.display = 'none';
+            };
+            videoPlayer.onerror = function() {
+                loading.textContent = '视频加载失败';
+            };
+        } else {
+            loading.textContent = '视频地址错误';
+        }
+    </script>
+</body>
+</html>

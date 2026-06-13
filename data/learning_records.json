@@ -1,0 +1,362 @@
+[
+  {
+    "id": "b47c1489",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B%E5%9B%BE%E7%89%87/%E5%B1%B1%E6%B0%B4%E6%83%85%E6%AD%8C%E5%9B%BE%E7%89%87.png",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:12"
+  },
+  {
+    "id": "1528f297",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B%E5%9B%BE%E7%89%87/%E5%B1%B1%E6%B0%B4%E6%83%85%E6%AD%8C%E5%9B%BE%E7%89%87.png",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:12"
+  },
+  {
+    "id": "6b84bccc",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B%E5%9B%BE%E7%89%87/%E5%B1%B1%E6%B0%B4%E6%83%85%E6%AD%8C%E5%9B%BE%E7%89%87.png",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:10"
+  },
+  {
+    "id": "69a57e96",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B%E5%9B%BE%E7%89%87/%E5%B1%B1%E6%B0%B4%E6%83%85%E6%AD%8C%E5%9B%BE%E7%89%87.png",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:08"
+  },
+  {
+    "id": "9586cdbd",
+    "userId": "user_0004",
+    "courseId": "test",
+    "courseTitle": "test",
+    "coverImage": "",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:06"
+  },
+  {
+    "id": "53728a77",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B%E5%9B%BE%E7%89%87/%E5%B1%B1%E6%B0%B4%E6%83%85%E6%AD%8C%E5%9B%BE%E7%89%87.png",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:06"
+  },
+  {
+    "id": "b5e83eaa",
+    "userId": "user_0004",
+    "courseId": "test",
+    "courseTitle": "test",
+    "coverImage": "",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:06"
+  },
+  {
+    "id": "7d9ed5c9",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B%E5%9B%BE%E7%89%87/%E5%B1%B1%E6%B0%B4%E6%83%85%E6%AD%8C%E5%9B%BE%E7%89%87.png",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:06"
+  },
+  {
+    "id": "a196082e",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://java-chashaobao-ai.oss-cn-beijing.aliyuncs.com/%E5%9B%BD%E5%88%9B%E5%9B%BE%E7%89%87/%E5%B1%B1%E6%B0%B4%E6%83%85%E6%AD%8C%E5%9B%BE%E7%89%87.png",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-05-06 23:05"
+  },
+  {
+    "id": "fd3cc9b9",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "荷塘月色",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 15:42"
+  },
+  {
+    "id": "dd92567b",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://picsum.photos/seed/dance1/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 15:42"
+  },
+  {
+    "id": "37b4bda9",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "荷塘月色",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 14:56"
+  },
+  {
+    "id": "8134fe78",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "荷塘月色",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 14:56"
+  },
+  {
+    "id": "d689fb39",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "荷塘月色",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 14:54"
+  },
+  {
+    "id": "f7aeb6e0",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://picsum.photos/seed/dance1/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 14:50"
+  },
+  {
+    "id": "bbeea43b",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://picsum.photos/seed/dance1/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 14:50"
+  },
+  {
+    "id": "ca69278e",
+    "userId": "user_0004",
+    "courseId": "course_002",
+    "courseTitle": "美丽的草原我的家",
+    "coverImage": "https://picsum.photos/seed/dance2/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 14:11"
+  },
+  {
+    "id": "d21f137b",
+    "userId": "user_0004",
+    "courseId": "course_002",
+    "courseTitle": "美丽的草原我的家",
+    "coverImage": "https://picsum.photos/seed/dance2/400/300",
+    "watchDuration": 1,
+    "totalDuration": 0,
+    "watchedAt": "2026-04-25 14:11"
+  },
+  {
+    "id": "b45a7675",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "荷塘月色",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-25 14:00"
+  },
+  {
+    "id": "3e62fff5",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://picsum.photos/seed/dance1/400/300",
+    "watchDuration": 1,
+    "totalDuration": 15,
+    "watchedAt": "2026-04-25 14:00"
+  },
+  {
+    "id": "68a189b7",
+    "userId": "user_0004",
+    "courseId": "course_001",
+    "courseTitle": "山水情歌",
+    "coverImage": "https://picsum.photos/seed/dance1/400/300",
+    "watchDuration": 1,
+    "totalDuration": 15,
+    "watchedAt": "2026-04-25 13:53"
+  },
+  {
+    "id": "69ed05ab",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-25 13:43"
+  },
+  {
+    "id": "439ca1a2",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 15:57"
+  },
+  {
+    "id": "8f86d6e7",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 15:57"
+  },
+  {
+    "id": "fda3c7a3",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 15:47"
+  },
+  {
+    "id": "2e4b8166",
+    "userId": "user_0004",
+    "courseId": "course_004",
+    "courseTitle": "椅上太极八式",
+    "coverImage": "https://picsum.photos/seed/dance4/400/300",
+    "watchDuration": 1,
+    "totalDuration": 18,
+    "watchedAt": "2026-04-24 14:48"
+  },
+  {
+    "id": "afd2042f",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 14:48"
+  },
+  {
+    "id": "e64449d3",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 14:44"
+  },
+  {
+    "id": "8ed6c296",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 14:18"
+  },
+  {
+    "id": "976b969f",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 14:10"
+  },
+  {
+    "id": "aa4ca547",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-24 14:02"
+  },
+  {
+    "id": "2f673f81",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-23 23:47"
+  },
+  {
+    "id": "c6880a55",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-23 23:47"
+  },
+  {
+    "id": "7105bdf3",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-23 23:03"
+  },
+  {
+    "id": "7e8bb3f0",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-23 23:03"
+  },
+  {
+    "id": "a2280d08",
+    "userId": "user_0004",
+    "courseId": "course_005",
+    "courseTitle": "广场舞入门：最炫民族风",
+    "coverImage": "https://picsum.photos/seed/dance5/400/300",
+    "watchDuration": 1,
+    "totalDuration": 10,
+    "watchedAt": "2026-04-23 23:02"
+  }
+]

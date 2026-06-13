@@ -1,0 +1,128 @@
+<view class="page">
+  <view class="noise-overlay"></view>
+
+  <view class="page-header">
+    <text class="page-title">健康助手</text>
+    <text class="page-subtitle">您的专属健康小管家</text>
+  </view>
+
+  <view class="health-stats">
+    <view class="stats-card">
+      <view class="stat-row">
+        <view class="stat-box">
+          <text class="stat-icon">❤️</text>
+          <text class="stat-value">{{stats.heartRate}}</text>
+          <text class="stat-label">心率(bpm)</text>
+        </view>
+        <view class="stat-box">
+          <text class="stat-icon">💉</text>
+          <text class="stat-value">{{stats.bloodPressure}}</text>
+          <text class="stat-label">血压</text>
+        </view>
+      </view>
+      <view class="stat-row">
+        <view class="stat-box">
+          <text class="stat-icon">👟</text>
+          <text class="stat-value">{{stats.steps}}</text>
+          <text class="stat-label">今日步数</text>
+        </view>
+        <view class="stat-box">
+          <text class="stat-icon">😴</text>
+          <text class="stat-value">{{stats.sleepHours}}h</text>
+          <text class="stat-label">睡眠时长</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="reminder-section">
+    <view class="section-header">
+      <text class="section-title">今日提醒</text>
+      <text class="reminder-count">{{todayReminders.length}} 条</text>
+    </view>
+    <view class="reminder-list">
+      <view
+        class="reminder-item {{item.completed ? 'completed' : ''}}"
+        wx:for="{{todayReminders}}"
+        wx:key="id"
+        bindtap="onReminderToggle"
+        data-index="{{index}}"
+      >
+        <view class="reminder-icon-wrap">
+          <text class="reminder-icon-text">{{item.icon === 'water' ? '💧' : item.icon === 'activity' ? '🏃' : item.icon === 'pill' ? '💊' : '📌'}}</text>
+        </view>
+        <view class="reminder-content">
+          <text class="reminder-title">{{item.title}}</text>
+          <text class="reminder-text">{{item.content}}</text>
+        </view>
+        <view class="reminder-check">
+          <text wx:if="{{item.completed}}">✓</text>
+          <text wx:else>○</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="tips-section">
+    <view class="section-header">
+      <text class="section-title">健康小贴士</text>
+    </view>
+    <view class="tips-list">
+      <view
+        class="tip-card"
+        wx:for="{{healthTips}}"
+        wx:key="id"
+        bindtap="goToCourseByTip"
+        data-tip="{{item.title}}"
+      >
+        <view class="tip-icon">
+          <text class="tip-icon-text">{{item.icon === 'lightbulb' ? '💡' : item.icon === 'apple' ? '🍎' : item.icon === 'heart' ? '❤️' : '📌'}}</text>
+        </view>
+        <view class="tip-content">
+          <text class="tip-title">{{item.title}}</text>
+          <text class="tip-text">{{item.content}}</text>
+        </view>
+        <view class="tip-arrow">
+          <text>›</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="profile-section">
+    <view class="section-header">
+      <text class="section-title">健康档案</text>
+      <text class="edit-btn">编辑</text>
+    </view>
+    <view class="profile-card">
+      <view class="profile-item">
+        <text class="profile-label">高血压</text>
+        <view class="profile-status {{healthProfile.hasHypertension ? 'active' : ''}}">
+          <text>{{healthProfile.hasHypertension ? '✓' : '✕'}}</text>
+        </view>
+      </view>
+      <view class="profile-item">
+        <text class="profile-label">糖尿病</text>
+        <view class="profile-status {{healthProfile.hasDiabetes ? 'active' : ''}}">
+          <text>{{healthProfile.hasDiabetes ? '✓' : '✕'}}</text>
+        </view>
+      </view>
+      <view class="profile-item">
+        <text class="profile-label">关节炎</text>
+        <view class="profile-status {{healthProfile.hasArthritis ? 'active' : ''}}">
+          <text>{{healthProfile.hasArthritis ? '✓' : '✕'}}</text>
+        </view>
+      </view>
+      <view class="profile-item">
+        <text class="profile-label">心脏病</text>
+        <view class="profile-status {{healthProfile.hasHeartDisease ? 'active' : ''}}">
+          <text>{{healthProfile.hasHeartDisease ? '✓' : '✕'}}</text>
+        </view>
+      </view>
+      <view class="profile-item">
+        <text class="profile-label">活动能力</text>
+        <text class="profile-value">{{healthProfile.mobilityLevel === 'excellent' ? '很好' : healthProfile.mobilityLevel === 'good' ? '良好' : healthProfile.mobilityLevel === 'some_limitation' ? '一般' : '较差'}}</text>
+      </view>
+    </view>
+  </view>
+</view>

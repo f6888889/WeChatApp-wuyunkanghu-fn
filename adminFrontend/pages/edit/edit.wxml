@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="header">
+    <view class="title">{{mode === 'edit' ? '编辑记录' : '新增记录'}}</view>
+    <view class="subtitle">类型: {{type}}</view>
+  </view>
+
+  <view class="card">
+    <view class="form-item" wx:for="{{formFields}}" wx:key="key">
+      <text class="label">{{item.label}} ({{item.key}})</text>
+      <input class="input" wx:if="{{item.type === 'input'}}" value="{{formData[item.key]}}" data-key="{{item.key}}" bindinput="onInputChange" />
+      <textarea class="textarea" wx:if="{{item.type === 'textarea'}}" value="{{formData[item.key]}}" data-key="{{item.key}}" bindinput="onInputChange" maxlength="-1" />
+      <switch wx:if="{{item.type === 'switch'}}" checked="{{formData[item.key]}}" data-key="{{item.key}}" bindchange="onSwitchChange" />
+    </view>
+
+    <view class="form-item">
+      <text class="label">完整原始数据 (JSON)</text>
+      <textarea class="textarea raw-json" value="{{rawJson}}" bindinput="onRawJsonChange" maxlength="-1" />
+    </view>
+  </view>
+
+  <view class="button-group">
+    <view class="btn btn-primary" bindtap="onSave">保存</view>
+    <view class="btn btn-secondary" style="margin-top: 20rpx;" bindtap="onCancel">取消</view>
+  </view>
+</view>

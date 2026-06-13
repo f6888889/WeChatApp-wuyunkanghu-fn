@@ -1,0 +1,16 @@
+<view class="container">
+  <video 
+    wx:if="{{!isReviewMode}}"
+    id="myVideo" 
+    class="video-player" 
+    src="{{videoUrl}}" 
+    controls 
+    autoplay 
+    enable-play-gesture 
+    show-center-play-btn
+    object-fit="contain">
+  </video>
+  <view wx:else class="review-placeholder">
+    <text>内容加载中...</text>
+  </view>
+</view>

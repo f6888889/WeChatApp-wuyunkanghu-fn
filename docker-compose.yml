@@ -1,0 +1,14 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: yinwu-backend
+    ports:
+      - "89:8080"
+    volumes:
+      - ./data:/app/data
+      - ./backend/models:/app/models
+    restart: unless-stopped
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev

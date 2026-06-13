@@ -1,0 +1,53 @@
+[
+  {
+    "id": "health_001",
+    "type": "reminder",
+    "title": "该喝水啦",
+    "content": "王奶奶，来跳广场舞之前记得喝杯温水哦~",
+    "timeSlot": "morning",
+    "icon": "water",
+    "priority": "normal"
+  },
+  {
+    "id": "health_002",
+    "type": "reminder",
+    "title": "该动一动了",
+    "content": "坐了两个小时了，起来活动活动筋骨吧！",
+    "timeSlot": "afternoon",
+    "icon": "activity",
+    "priority": "high"
+  },
+  {
+    "id": "health_003",
+    "type": "reminder",
+    "title": "服药提醒",
+    "content": "王奶奶，您的降压药吃了吗？别忘了哦~",
+    "timeSlot": "evening",
+    "icon": "pill",
+    "priority": "high"
+  },
+  {
+    "id": "health_004",
+    "type": "tip",
+    "title": "今日知识",
+    "content": "跳舞前热身5分钟，可以减少关节损伤哦！",
+    "category": "health",
+    "icon": "lightbulb"
+  },
+  {
+    "id": "health_005",
+    "type": "tip",
+    "title": "饮食建议",
+    "content": "跳舞前不要吃太饱，半流食最容易消化~",
+    "category": "nutrition",
+    "icon": "apple"
+  },
+  {
+    "id": "health_006",
+    "type": "tip",
+    "title": "心理关怀",
+    "content": "今天心情好吗？来跳个欢快的舞蹈吧！",
+    "category": "mental",
+    "icon": "heart"
+  }
+]

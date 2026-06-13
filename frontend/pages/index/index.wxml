@@ -1,0 +1,84 @@
+<view class="page">
+  <view class="header">
+    <view class="greeting-section">
+      <text class="greeting-text">{{greeting}}</text>
+      <text class="greeting-sub">今天想动一动吗？</text>
+    </view>
+  </view>
+
+  <view class="main-content">
+    <view class="featured-card" bindtap="goToCourse" data-course="{{recommendedCourse}}">
+      <view class="featured-label">今日推荐</view>
+      <image class="featured-image" src="{{recommendedCourse.coverImage}}" mode="aspectFill"></image>
+      <view class="featured-info">
+        <text class="featured-title">{{recommendedCourse.title}}</text>
+        <text class="featured-desc">{{recommendedCourse.description}}</text>
+      </view>
+    </view>
+
+    <view class="progress-section">
+      <view class="section-title">您的进度</view>
+      <view class="progress-card">
+        <view class="progress-item">
+          <text class="progress-icon">📅</text>
+          <text class="progress-value">{{userProgress.continuousDays}}</text>
+          <text class="progress-label">登录天数</text>
+        </view>
+        <view class="progress-divider"></view>
+        <view class="progress-item">
+          <text class="progress-icon">⏱</text>
+          <text class="progress-value">{{userProgress.totalMinutes}}</text>
+          <text class="progress-label">学习分钟</text>
+        </view>
+        <view class="progress-divider"></view>
+        <view class="progress-item">
+          <text class="progress-icon">⏰</text>
+          <text class="progress-value">{{userProgress.onlineMinutes}}</text>
+          <text class="progress-label">在线分钟</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="all-courses-section">
+      <view class="section-header">
+        <text class="section-title">{{isReviewMode ? '全部图文' : '全部视频'}}</text>
+        <text class="section-count" wx:if="{{!isReviewMode}}">{{allCourses.length}} 个</text>
+        <text class="section-count" wx:else>{{safeArticles.length || 0}} 个</text>
+      </view>
+
+      <block wx:if="{{!isReviewMode}}">
+        <view class="courses-grid">
+          <view class="course-card" wx:for="{{paginatedCourses}}" wx:key="id" bindtap="goToCourse" data-course="{{item}}">
+            <image class="course-cover" src="{{item.coverImage}}" mode="aspectFill"></image>
+            <view class="course-card-info">
+              <text class="course-card-title">{{item.title}}</text>
+              <text class="course-card-desc">{{item.description}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="safe-articles-list">
+          <view class="safe-article-card" wx:for="{{paginatedSafeArticles}}" wx:key="id" bindtap="goToCourse" data-course="{{item}}">
+            <image class="safe-article-cover" src="{{item.coverImage}}" mode="aspectFill"></image>
+            <view class="safe-article-content">
+              <text class="safe-article-title">{{item.title}}</text>
+              <text class="safe-article-desc">{{item.content}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 分页跳转页码 -->
+      <view class="pagination-container" wx:if="{{totalPages > 1}}">
+        <view class="page-btn {{currentPage === 1 ? 'disabled' : ''}}" bindtap="onPrevPage">上一页</view>
+        <block wx:for="{{pageList}}" wx:key="*this">
+          <view class="page-num {{currentPage === item ? 'active' : ''}}" bindtap="onPageTap" data-page="{{item}}">
+            {{item}}
+          </view>
+        </block>
+        <view class="page-btn {{currentPage === totalPages ? 'disabled' : ''}}" bindtap="onNextPage">下一页</view>
+      </view>
+    </view>
+  </view>
+</view>

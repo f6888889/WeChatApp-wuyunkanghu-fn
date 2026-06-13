@@ -1,0 +1,265 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--background);
+  position: relative;
+  padding-bottom: 60rpx;
+}
+
+.page-header {
+  padding: 40rpx;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: block;
+}
+
+.page-subtitle {
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 8rpx;
+}
+
+.health-stats {
+  padding: 0 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.stats-card {
+  background: var(--card-bg);
+  border-radius: 24rpx;
+  padding: 32rpx;
+  box-shadow: 0 8rpx 32rpx rgba(61, 44, 46, 0.1);
+}
+
+.stat-row {
+  display: flex;
+  gap: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.stat-box {
+  flex: 1;
+  background: var(--white);
+  border-radius: 20rpx;
+  padding: 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.stat-box .stat-icon {
+  color: var(--primary);
+  font-size: 44rpx;
+}
+
+.stat-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: var(--text-secondary);
+}
+
+.reminder-section,
+.tips-section,
+.profile-section {
+  padding: 0 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+}
+
+.reminder-count {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+}
+
+.reminder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.reminder-item {
+  background: var(--white);
+  border-radius: 20rpx;
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(61, 44, 46, 0.06);
+  transition: all 0.3s ease;
+}
+
+.reminder-item.completed {
+  opacity: 0.6;
+}
+
+.reminder-item.completed .reminder-title,
+.reminder-item.completed .reminder-text {
+  text-decoration: line-through;
+}
+
+.reminder-icon-wrap {
+  width: 80rpx;
+  height: 80rpx;
+  background: var(--warning);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+}
+
+.reminder-content {
+  flex: 1;
+}
+
+.reminder-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.reminder-text {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.reminder-check {
+  color: var(--primary);
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.tip-card {
+  background: var(--white);
+  border-radius: 20rpx;
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(61, 44, 46, 0.06);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tip-card:active {
+  transform: scale(0.98);
+}
+
+.tip-icon {
+  width: 80rpx;
+  height: 80rpx;
+  background: var(--success);
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.tip-content {
+  flex: 1;
+}
+
+.tip-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: var(--text-dark);
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.tip-text {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.tip-arrow {
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.profile-card {
+  background: var(--white);
+  border-radius: 24rpx;
+  padding: 32rpx;
+  box-shadow: 0 4rpx 16rpx rgba(61, 44, 46, 0.06);
+}
+
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid rgba(139, 125, 123, 0.1);
+}
+
+.profile-item:last-child {
+  border-bottom: none;
+}
+
+.profile-label {
+  font-size: 30rpx;
+  color: var(--text-dark);
+}
+
+.profile-status {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background: rgba(139, 125, 123, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.profile-status.active {
+  background: var(--success);
+  color: white;
+}
+
+.profile-value {
+  font-size: 30rpx;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.edit-btn {
+  font-size: 28rpx;
+  color: var(--primary);
+}

@@ -1,0 +1,58 @@
+.header {
+  margin-bottom: 60rpx;
+  padding: 40rpx 0;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: 2rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30rpx;
+}
+
+.menu-item {
+  background: #fff;
+  padding: 40rpx 30rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.menu-item:active {
+  transform: scale(0.96);
+  background: #fafafa;
+}
+
+.menu-icon {
+  font-size: 64rpx;
+  margin-bottom: 20rpx;
+}
+
+.menu-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.menu-desc {
+  font-size: 22rpx;
+  color: #bbb;
+  line-height: 1.3;
+}

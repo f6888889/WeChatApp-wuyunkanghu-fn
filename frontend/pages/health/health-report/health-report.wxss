@@ -1,0 +1,522 @@
+.page {
+  min-height: 100vh;
+  background-color: #FDF6EC;
+  padding-bottom: 40rpx;
+}
+
+.page-header {
+  padding: 60rpx 40rpx 30rpx;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1565C0;
+  display: block;
+}
+
+.page-subtitle {
+  font-size: 28rpx;
+  color: #64B5F6;
+  margin-top: 10rpx;
+  display: block;
+}
+
+.report-loading {
+  text-align: center;
+  padding: 100rpx 0;
+  font-size: 28rpx;
+  color: #8B7D7B;
+}
+
+.error-view {
+  text-align: center;
+  padding: 100rpx 40rpx;
+}
+
+.error-text {
+  font-size: 28rpx;
+  color: #d32f2f;
+}
+
+.report-content {
+  padding: 0 30rpx;
+}
+
+.section {
+  margin-bottom: 30rpx;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+  padding: 0 10rpx;
+}
+
+.section-icon {
+  font-size: 36rpx;
+}
+
+.section-title {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #3d2c2a;
+}
+
+.assessment-card {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+
+.assessment-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.assessment-item {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.assessment-label {
+  font-size: 26rpx;
+  color: #666;
+  width: 140rpx;
+}
+
+.score-bar {
+  flex: 1;
+  height: 16rpx;
+  background: #E0E0E0;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #81C784);
+  border-radius: 8rpx;
+  transition: width 0.3s;
+}
+
+.assessment-score {
+  font-size: 24rpx;
+  color: #4CAF50;
+  width: 80rpx;
+  text-align: right;
+}
+
+.assessment-result {
+  margin-top: 24rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #E0E0E0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+.result-label {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.result-value {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #E07A5F;
+}
+
+.result-recommend {
+  font-size: 24rpx;
+  color: #1565C0;
+  background: #E3F2FD;
+  padding: 4rpx 16rpx;
+  border-radius: 20rpx;
+  margin-left: 10rpx;
+}
+
+.emotional-card {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+
+.emotional-info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20rpx;
+}
+
+.emotional-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.emotional-label {
+  font-size: 24rpx;
+  color: #8B7D7B;
+}
+
+.emotional-value {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 6rpx 24rpx;
+  border-radius: 16rpx;
+}
+
+.stress-relaxed {
+  color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.stress-moderate {
+  color: #FF9800;
+  background: #FFF3E0;
+}
+
+.stress-high {
+  color: #FF5722;
+  background: #FBE9E7;
+}
+
+.stress-veryhigh {
+  color: #d32f2f;
+  background: #FFEBEE;
+}
+
+.mood-happy {
+  color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.mood-calm {
+  color: #2196F3;
+  background: #E3F2FD;
+}
+
+.mood-stressed {
+  color: #FF9800;
+  background: #FFF3E0;
+}
+
+.mood-low {
+  color: #9C27B0;
+  background: #F3E5F5;
+}
+
+.emotional-recommend {
+  text-align: center;
+  padding-top: 16rpx;
+  border-top: 1rpx solid #E0E0E0;
+}
+
+.recommend-text {
+  font-size: 26rpx;
+  color: #1565C0;
+}
+
+.exercise-card {
+  background: #FFFFFF;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+
+.exercise-level {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.level-badge {
+  font-size: 28rpx;
+  font-weight: bold;
+  padding: 8rpx 24rpx;
+  border-radius: 20rpx;
+}
+
+.level-beginner {
+  color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.level-easy {
+  color: #8BC34A;
+  background: #F1F8E9;
+}
+
+.level-medium {
+  color: #FF9800;
+  background: #FFF3E0;
+}
+
+.level-hard {
+  color: #E91E63;
+  background: #FCE4EC;
+}
+
+.exercise-stats {
+  display: flex;
+  gap: 20rpx;
+}
+
+.stat-item {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.exercise-difficulty {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.difficulty-label {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.difficulty-stars {
+  display: flex;
+}
+
+.star {
+  font-size: 32rpx;
+  color: #FFD700;
+}
+
+.star-empty {
+  font-size: 32rpx;
+  color: #E0E0E0;
+}
+
+.rehab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.rehab-item {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+
+.rehab-header {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 10rpx;
+}
+
+.rehab-tag {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.rehab-severity {
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+}
+
+.severity-light {
+  color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.severity-moderate {
+  color: #FF9800;
+  background: #FFF3E0;
+}
+
+.severity-severe {
+  color: #d32f2f;
+  background: #FFEBEE;
+}
+
+.rehab-desc {
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.course-item {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+}
+
+.course-info {
+  flex: 1;
+}
+
+.course-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #3d2c2a;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.course-reason {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.course-tags {
+  display: flex;
+  gap: 12rpx;
+}
+
+.course-tag {
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 10rpx;
+}
+
+.tag-category {
+  color: #1565C0;
+  background: #E3F2FD;
+}
+
+.tag-match {
+  color: #4CAF50;
+  background: #E8F5E9;
+}
+
+.course-arrow {
+  font-size: 40rpx;
+  color: #CCC;
+  padding-left: 16rpx;
+}
+
+.report-footer {
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.footer-text {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.alert-section {
+  margin-top: 30rpx;
+}
+
+.alert-card {
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
+  border-left: 8rpx solid;
+}
+
+.alert-HIGH {
+  border-left-color: #d32f2f;
+  background: #FFF5F5;
+}
+
+.alert-MEDIUM {
+  border-left-color: #FF9800;
+  background: #FFF8E1;
+}
+
+.alert-LOW {
+  border-left-color: #2196F3;
+  background: #E3F2FD;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+}
+
+.alert-icon {
+  font-size: 36rpx;
+}
+
+.alert-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.alert-body {
+  margin-bottom: 16rpx;
+}
+
+.alert-content {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.6;
+}
+
+.alert-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.alert-time {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.alert-contact {
+  font-size: 24rpx;
+  color: #E53935;
+}
+
+.emergency-tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  background: #FFF3E0;
+  border-radius: 12rpx;
+}
+
+.tip-icon {
+  font-size: 28rpx;
+}
+
+.tip-text {
+  font-size: 26rpx;
+  color: #E65100;
+}
+
+.tip-arrow {
+  font-size: 28rpx;
+  color: #E65100;
+}

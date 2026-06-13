@@ -1,0 +1,68 @@
+<view class="page">
+  <view class="noise-overlay"></view>
+
+  <view class="loading" wx:if="{{isLoading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <view class="course-content" wx:if="{{course}}">
+    <view class="video-section" bindtap="onPlayVideo" wx:if="{{!isReviewMode}}">
+      <image class="cover-image" src="{{course.coverImage}}" mode="aspectFill"></image>
+      <view class="play-btn">
+        <text class="play-icon">▶</text>
+      </view>
+      <view class="video-overlay"></view>
+    </view>
+
+    <!-- 环境适配纯图片展示 -->
+    <view class="video-section placeholder-mode" wx:else>
+      <image class="cover-image" src="{{course.coverImage}}" mode="aspectFill"></image>
+    </view>
+
+    <view class="course-info">
+      <view class="info-header">
+        <text class="course-title">{{course.title}}</text>
+      </view>
+
+      <view class="action-buttons">
+        <button class="favorite-action-btn {{isFavorite ? 'favorited' : ''}}" bindtap="onFavorite">
+          <text class="favorite-icon">{{isFavorite ? '♥' : '♡'}}</text>
+          <text>{{isFavorite ? '已收藏' : '收藏'}}</text>
+        </button>
+      </view>
+
+      <text class="course-desc">{{course.description}}</text>
+    </view>
+
+    <view class="suitable-section">
+      <text class="section-title">适合人群</text>
+      <view class="tag-list">
+        <text class="tag-item" wx:for="{{course.suitableFor}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+
+    <view class="steps-section" wx:if="{{isReviewMode && course.steps && course.steps.length > 0}}">
+      <text class="section-title">图文步骤</text>
+      <view class="steps-list">
+        <view class="step-item" wx:for="{{course.steps}}" wx:key="index">
+          <view class="step-num">{{index + 1}}</view>
+          <view class="step-content">
+            <text class="step-title">{{item.title}}</text>
+            <text class="step-desc">{{item.description}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="benefits-section">
+      <text class="section-title">课程效果</text>
+      <view class="benefits-list">
+        <view class="benefit-item" wx:for="{{course.benefits}}" wx:key="index">
+          <text class="benefit-icon">✓</text>
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

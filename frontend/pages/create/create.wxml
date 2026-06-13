@@ -1,0 +1,76 @@
+<view class="page">
+  <view class="header">
+    <text class="title">{{isReviewMode ? '精选' : '创作'}}</text>
+    <text class="subtitle" wx:if="{{!isReviewMode}}">发布你的图文内容</text>
+  </view>
+
+  <block wx:if="{{!isReviewMode}}">
+    <view class="upload-section">
+      <view class="video-uploader" wx:if="{{!videoPath}}" bindtap="onChooseVideo">
+        <text class="upload-icon">📷</text>
+        <text class="upload-text">点击选择照片/文件</text>
+        <text class="upload-hint">支持常规格式文件上传</text>
+      </view>
+
+      <view class="video-preview" wx:if="{{videoPath}}">
+        <video class="preview-video" src="{{videoPath}}" controls></video>
+        <view class="video-actions">
+          <button class="reselect-btn" bindtap="onChooseVideo">重新选择</button>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-section">
+      <view class="form-item">
+        <text class="form-label">内容标题</text>
+        <input
+          class="form-input"
+          placeholder="请输入标题"
+          value="{{videoTitle}}"
+          bindinput="onTitleInput"
+        />
+      </view>
+
+      <view class="form-item">
+        <text class="form-label">内容描述</text>
+        <textarea
+          class="form-textarea"
+          placeholder="请输入描述"
+          value="{{videoDesc}}"
+          bindinput="onDescInput"
+          maxlength="200"
+        />
+      </view>
+    </view>
+
+    <view class="upload-btn-section">
+      <button
+        class="upload-btn {{isUploading ? 'uploading' : ''}}"
+        bindtap="onUpload"
+        disabled="{{isUploading || !videoPath}}"
+      >
+        <text wx:if="{{!isUploading}}">发布内容</text>
+        <text wx:else>上传中... {{uploadProgress}}%</text>
+      </button>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="safe-section">
+      <view class="section-header">
+        <text class="section-title">精选图文</text>
+        <text class="section-count">{{safeArticles.length || 0}} 个</text>
+      </view>
+
+      <view class="safe-articles-list">
+        <view class="safe-article-card" wx:for="{{safeArticles}}" wx:key="id" bindtap="goToCourse" data-course="{{item}}">
+          <image class="safe-article-cover" src="{{item.coverImage}}" mode="aspectFill"></image>
+          <view class="safe-article-content">
+            <text class="safe-article-title">{{item.title}}</text>
+            <text class="safe-article-desc">{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
